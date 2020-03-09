@@ -1,45 +1,12 @@
 <template>
   <div class="index">
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+    <v-btn class="mx-2 settings" fab dark color="#8A2BE2" v-on:click="settingsShow()">
+      <v-icon>mdi-settings</v-icon>
+    </v-btn>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-content>
-      Salut
-    </v-content>
+    <v-alert type="warning" class="settings-alert" v-if="settings">
+      No settings...
+    </v-alert>
   </div>
 </template>
 
@@ -47,7 +14,34 @@
 // @ is an alias to /src
 export default {
   name: 'Index',
-  components: {
+  data () {
+    return {
+      settings: false
+    }
+  },
+  methods: {
+    settingsShow () {
+      this.settings = true
+      setTimeout(() => {
+        this.settings = false
+      }, 5000)
+    }
   }
 }
 </script>
+
+<style scoped>
+.settings {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.settings-alert {
+  position: absolute;
+  bottom: 0%;
+  width: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+</style>
