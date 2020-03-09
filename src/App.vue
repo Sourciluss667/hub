@@ -25,11 +25,6 @@ export default {
     } else {
       document.cookie = 'auth=false'
     }
-  },
-  computed: {
-    theme () {
-      return (this.$vuetify.theme.dark) ? 'dark' : 'light'
-    }
   }
 }
 </script>
