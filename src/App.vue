@@ -1,18 +1,13 @@
 <template>
   <div id="app">
-    <router-view v-if="auth" />
-    <Auth v-else />
+    <v-app style="background-color: #252525;">
+      <router-view v-if="auth" />
+      <Auth v-else />
+    </v-app>
   </div>
 </template>
 
 <script>
-/*  Color Palette
- *  #98c1d9 BG
- *  #345995
- *  #6969b3
- *  #4b244a
- *  #ca1551
- */
 import Auth from '@/views/Auth.vue'
 export default {
   name: 'App',
@@ -33,3 +28,18 @@ export default {
   }
 }
 </script>
+
+<style>
+.v-label {
+  color: white!important;
+  opacity: 1;
+}
+.v-counter {
+  color: white!important;
+  opacity: 1;
+}
+input {
+  color: white!important;
+  opacity: 1;
+}
+</style>

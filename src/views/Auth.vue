@@ -1,6 +1,17 @@
 <template>
   <div class="auth">
-    <input type="password" name="pass" id="pass" placeholder="P@sSW0rd" v-model="pass">
+    <v-text-field
+      v-model="pass"
+      label="P@sSW0rD"
+      :counter="420"
+      name="pass"
+      color="purple"
+      class="pass"
+      type="password"
+      required
+      single-line
+      outlined
+    ></v-text-field>
   </div>
 </template>
 
@@ -15,13 +26,10 @@ export default {
   watch: {
     pass: function () {
       if (this.pass === 'jojopass') {
-        document.getElementById('pass').style.borderColor = '#00FF00'
         setTimeout(_ => {
-          this.$parent.auth = true
+          this.$parent.$parent.auth = true
           document.cookie = 'auth=true;path=/'
         }, 500)
-      } else {
-        document.getElementById('pass').style.borderColor = '#FF0000'
       }
     }
   }
@@ -29,13 +37,10 @@ export default {
 </script>
 
 <style scoped>
-#pass {
-  color: #345995;
+.pass {
   position: absolute;
   display: block;
-  font-size: 25px;
-  height: 50px;
-  border-radius: 31px;
+  width: 30%;
   text-align: center;
   top: 50%;
   left: 50%;
