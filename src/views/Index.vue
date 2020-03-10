@@ -53,7 +53,7 @@ export default {
       creator: 'Sourciluss',
       lastEdit: new Date(),
       description: 'Un jeu de Pierre Papier Ciseaux...',
-      link: '#'
+      link: 'https://pps.sourciluss.fr'
     }
   }
 }
