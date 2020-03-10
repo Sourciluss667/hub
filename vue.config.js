@@ -4,8 +4,9 @@ module.exports = {
   ],
   devServer: {
     // open: process.platform === 'darwin',
-    host: '0.0.0.0',
-    port: 80 // CHANGE YOUR PORT HERE!
+    host: '51.178.40.31',
+    port: 443, // CHANGE YOUR PORT HERE!
+    disableHostCheck: true
     // https: false,
     // hotOnly: false,
   }
